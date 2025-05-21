@@ -28,7 +28,7 @@ return {
             vim.keymap.set("n", "<leader>ri", vim.lsp.buf.implementation)
             vim.keymap.set("n", "<leader>O", vim.lsp.buf.document_symbol)
 
-            -- Formattin on save for go
+            -- Formatting on save for go
             vim.api.nvim_create_autocmd("BufWritePre", {
                 pattern = "*.go",
                 callback = function()
