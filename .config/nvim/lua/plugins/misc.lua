@@ -1,5 +1,9 @@
 return {
 	{
+		-- Discord presence
+		"andweeb/presence.nvim",
+	},
+	{
 		-- Detect tabstop and shiftwidth automatically
 		"tpope/vim-sleuth",
 	},
