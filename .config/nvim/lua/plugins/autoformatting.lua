@@ -25,10 +25,12 @@ return {
 		})
 
 		local sources = {
-			diagnostics.eslint_d,
+			require("none-ls.diagnostics.eslint_d"),
 			diagnostics.checkmake,
 			diagnostics.golangci_lint,
-			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
+			formatting.prettier.with({
+				filetypes = { "html", "json", "yaml", "markdown", "javascript", "typescript", "css" },
+			}),
 			formatting.stylua,
 			formatting.shfmt.with({ args = { "-i", "4" } }),
 			formatting.goimports,
