@@ -25,6 +25,7 @@ return {
 		})
 
 		local sources = {
+			diagnostics.eslint_d,
 			diagnostics.checkmake,
 			diagnostics.golangci_lint,
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
