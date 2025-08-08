@@ -20,6 +20,7 @@ return {
 				"ruff", -- Python linter and formatter
 				"goimports", -- Go formatter
 				"golangci-lint", -- Go linter
+				"clang-format", -- C/C++ formatter
 			},
 			automatic_installation = true,
 		})
@@ -36,6 +37,11 @@ return {
 			formatting.goimports,
 			require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 			require("none-ls.formatting.ruff_format"),
+
+			formatting.clang_format.with({
+				filetypes = { "c", "cpp" },
+				extra_args = { "--style=file" },
+			}),
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -50,7 +56,12 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							vim.lsp.buf.format({ async = false })
+							vim.lsp.buf.format({
+								async = false,
+								filter = function(c)
+									return c.name == "null-ls"
+								end,
+							})
 						end,
 					})
 				end
