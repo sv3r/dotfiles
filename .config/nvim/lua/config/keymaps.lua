@@ -1,5 +1,8 @@
+-- Format file
+vim.keymap.set('n', '<leader>mp', vim.lsp.buf.format)
+
 -- Better yanking
-vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line'})
+vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yanking' })
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
 

@@ -6,3 +6,5 @@ require('config.lsp')
 
 require('plugins.moonfly')
 require('plugins.nvim-treesitter')
+require('plugins.oil')
+require('plugins.mini-pick')
