@@ -1,2 +1,8 @@
-require("options")
-require("keymaps")
+require('config.globals')
+require('config.options')
+require('config.keymaps')
+require('config.autocmd')
+require('config.lsp')
+
+require('plugins.moonfly')
+require('plugins.nvim-treesitter')
