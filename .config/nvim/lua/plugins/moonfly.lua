@@ -6,6 +6,8 @@ vim.g.moonflyTransparent = bg_transparent
 local reload_moonfly = function()
     package.loaded['moonfly'] = nil
     require('moonfly').style()
+    vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none' })
+    vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'none' })
 end
 
 reload_moonfly()
@@ -19,3 +21,6 @@ end
 vim.keymap.set('n', '<leader>bg', toggle_transparency, { noremap = true, silent = true })
 
 vim.cmd('colorscheme moonfly')
+
+vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'none' })

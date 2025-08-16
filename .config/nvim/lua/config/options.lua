@@ -37,9 +37,6 @@ vim.opt.guicursor = {
     'o:hor50'
 }
 
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
-vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "none" })
-
 -- Show whitespace characters
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
