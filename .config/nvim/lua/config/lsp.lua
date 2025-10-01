@@ -1,5 +1,12 @@
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('clangd')
+-- Configs can be found here https://github.com/neovim/nvim-lspconfig
+-- Should be placed in ~/.config/nvim/lsp/
+vim.lsp.enable(
+    {
+        'lua_ls',
+        'clangd',
+        'bash'
+    }
+)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
