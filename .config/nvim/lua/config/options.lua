@@ -1,3 +1,11 @@
+local is_wsl = false
+do
+    local uname = vim.loop.os_uname().release
+    if uname and uname:match('WSL') then
+        is_wsl = true
+    end
+end
+
 -- Lines
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -39,7 +47,7 @@ vim.opt.guicursor = {
 
 -- Show whitespace characters
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '┬╗ ', trail = '┬╖', nbsp = 'ΓÉú' }
 
 -- Brackets
 vim.opt.showmatch = true
@@ -56,10 +64,26 @@ vim.opt.splitright = true
 
 -- Behaviour
 vim.opt.diffopt:append('linematch:60')
-vim.opt.clipboard:append('unnamedplus')
 vim.opt.iskeyword:append('-')
 vim.opt.timeoutlen = 500
-vim.opt.ttimeoutlen = 0
+
+if is_wsl then
+    vim.g.clipboard = {
+        name = 'WslClipboard',
+        copy = {
+            ['+'] = 'clip.exe',
+            ['*'] = 'clip.exe',
+        },
+        paste = {
+            ['+'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))',
+            ['*'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))',
+        },
+        cache_enabled = 0,
+    }
+else
+    vim.opt.clipboard:append('unnamedplus')
+    vim.opt.ttimeoutlen = 0
+end
 
 -- Performance
 vim.opt.redrawtime = 10000
