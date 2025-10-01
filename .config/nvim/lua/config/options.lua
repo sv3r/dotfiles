@@ -47,7 +47,7 @@ vim.opt.guicursor = {
 
 -- Show whitespace characters
 vim.opt.list = true
-vim.opt.listchars = { tab = '┬╗ ', trail = '┬╖', nbsp = 'ΓÉú' }
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Brackets
 vim.opt.showmatch = true
