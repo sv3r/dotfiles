@@ -46,6 +46,7 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position'
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP [c]ode [a]ction' })
 
 -- Source current file / execute lua code
 vim.keymap.set('n', '<leader>xx', ':source %<CR>', { desc = 'Source current file' })
