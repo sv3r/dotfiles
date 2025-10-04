@@ -4,7 +4,8 @@ vim.lsp.enable(
     {
         'lua_ls',
         'clangd',
-        'bashls'
+        'bashls',
+        'ruby_lsp'
     }
 )
 
