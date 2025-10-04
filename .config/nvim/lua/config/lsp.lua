@@ -6,7 +6,9 @@ vim.lsp.enable(
         'clangd',
         'bashls',
         'ruby_lsp',
-        'yamlls'
+        'rubocop',
+        'yamlls',
+        'ts_ls'
     }
 )
 
