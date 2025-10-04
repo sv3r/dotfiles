@@ -1,6 +1,6 @@
 vim.pack.add({ 'https://github.com/bluz71/vim-moonfly-colors' })
 
-local bg_transparent = true
+local bg_transparent = false
 vim.g.moonflyTransparent = bg_transparent
 
 local reload_moonfly = function()
