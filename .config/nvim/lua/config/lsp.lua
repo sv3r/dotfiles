@@ -5,7 +5,8 @@ vim.lsp.enable(
         'lua_ls',
         'clangd',
         'bashls',
-        'ruby_lsp'
+        'ruby_lsp',
+        'yamlls'
     }
 )
 
