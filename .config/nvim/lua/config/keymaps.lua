@@ -1,54 +1,63 @@
+local map = vim.keymap.set
+
 -- Format file
-vim.keymap.set('n', '<leader>mp', vim.lsp.buf.format)
+map('n', '<leader>mp', vim.lsp.buf.format)
 
 -- Better yanking
-vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
-vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste without yanking' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
+map('n', 'Y', 'y$', { desc = 'Yank to end of line' })
+map('x', '<leader>p', '"_dP', { desc = 'Paste without yanking' })
+map({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete without yanking' })
 
 -- Navigate document centered
-vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next search result (centered)' })
-vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Previous search result (centered)' })
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half page down (centered)' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page up (centered)' })
+map('n', 'n', 'nzzzv', { desc = 'Next search result (centered)' })
+map('n', 'N', 'Nzzzv', { desc = 'Previous search result (centered)' })
+map('n', '<C-d>', '<C-d>zz', { desc = 'Half page down (centered)' })
+map('n', '<C-u>', '<C-u>zz', { desc = 'Half page up (centered)' })
 
 -- Navigate buffers
-vim.keymap.set('n', '<leader>bb', '<C-^>', { desc = 'Switch to alternate buffer' })
-vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
+map('n', '<leader>bb', '<C-^>', { desc = 'Switch to alternate buffer' })
+map('n', '<leader>bn', ':bnext<CR>', { desc = 'Next buffer' })
+map('n', '<leader>bp', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 -- Window navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom window' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to top window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
+map('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
+map('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom window' })
+map('n', '<C-k>', '<C-w>k', { desc = 'Move to top window' })
+map('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
 
 -- Window creation
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = 'Split window horizontally' })
-vim.keymap.set('n', '<C-Up>', ':resize +2<CR>', { desc = 'Increase window height' })
-vim.keymap.set('n', '<C-Down>', ':resize -2<CR>', { desc = 'Decrease window height' })
-vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Decrease window width' })
-vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Increase window width' })
+map('n', '<leader>sv', ':vsplit<CR>', { desc = 'Split window vertically' })
+map('n', '<leader>sh', ':split<CR>', { desc = 'Split window horizontally' })
+map('n', '<C-Up>', ':resize +2<CR>', { desc = 'Increase window height' })
+map('n', '<C-Down>', ':resize -2<CR>', { desc = 'Decrease window height' })
+map('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'Decrease window width' })
+map('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'Increase window width' })
 
 -- Move lines
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down' })
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
-vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
-vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+map('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down' })
+map('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up' })
+map('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+map('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 -- Indent
-vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
-vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
+map('v', '<', '<gv', { desc = 'Indent left and reselect' })
+map('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Join lines whilst keeping cursor position
-vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position' })
+map('n', 'J', 'mzJ`z', { desc = 'Join lines and keep cursor position' })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP [c]ode [a]ction' })
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Source current file / execute lua code
-vim.keymap.set('n', '<leader>xx', ':source %<CR>', { desc = 'Source current file' })
-vim.keymap.set('n', '<leader>x', ':.lua<CR>', { desc = 'Lua: execute current line' })
-vim.keymap.set('v', '<leader>x', ':lua<CR>', { desc = 'Lua: execute current selection' })
+map('n', '<leader>xx', ':source %<CR>', { desc = 'Source current file' })
+map('n', '<leader>x', ':.lua<CR>', { desc = 'Lua: execute current line' })
+map('v', '<leader>x', ':lua<CR>', { desc = 'Lua: execute current selection' })
+
+-- LSP
+map('n', 'K', vim.lsp.buf.hover, {})
+map('n', '<leader>gd', vim.lsp.buf.definition, {})
+map('n', '<leader>gr', vim.lsp.buf.references, {})
+map('n', '<leader>gf', vim.lsp.buf.format, {})
+map('n', '<leader>ca', vim.lsp.buf.code_action, {})
+map('n', '<leader>rn', vim.lsp.buf.rename, {})
