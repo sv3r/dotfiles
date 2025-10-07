@@ -1,17 +1,27 @@
+local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 -- Configs can be found here https://github.com/neovim/nvim-lspconfig
 -- Should be placed in ~/.config/nvim/lsp/
-vim.lsp.enable(
-    {
-        'lua_ls',
-        'clangd',
-        'bashls',
-        'ruby_lsp',
-        'rubocop',
-        'yamlls',
-        'ts_ls',
-        'texlab'
-    }
-)
+local servers = {
+    'lua_ls',
+    'clangd',
+    'bashls',
+    'ruby_lsp',
+    'rubocop',
+    'yamlls',
+    'ts_ls',
+    'texlab'
+}
+
+for _, name in ipairs(servers) do
+    local loaded, config = pcall(require, '.lsp' .. name)
+    if loaded and type(config) == 'table' then
+        config.capabilities = capabilities
+        vim.lsp.config(name, config)
+    end
+end
+
+vim.lsp.enable(servers)
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
