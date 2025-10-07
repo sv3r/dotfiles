@@ -5,7 +5,7 @@ vim.pack.add({
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'bash', 'ruby', 'yaml', 'javascript',
-        'typescript', 'latex', 'bibtex'
+        'typescript', 'latex', 'bibtex', 'css', 'gitignore', 'http', 'scss'
     },
     auto_install = false,
     highlight = {
