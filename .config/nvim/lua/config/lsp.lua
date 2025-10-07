@@ -8,7 +8,8 @@ vim.lsp.enable(
         'ruby_lsp',
         'rubocop',
         'yamlls',
-        'ts_ls'
+        'ts_ls',
+        'texlab'
     }
 )
 
