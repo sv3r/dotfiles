@@ -10,7 +10,8 @@ local servers = {
     'rubocop',
     'yamlls',
     'ts_ls',
-    'texlab'
+    'texlab',
+    'tailwindcss'
 }
 
 for _, name in ipairs(servers) do
