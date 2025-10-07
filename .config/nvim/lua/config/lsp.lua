@@ -11,7 +11,9 @@ local servers = {
     'yamlls',
     'ts_ls',
     'texlab',
-    'tailwindcss'
+    'tailwindcss',
+    'cssls',
+    'html'
 }
 
 for _, name in ipairs(servers) do
