@@ -10,8 +10,6 @@ exec rclone --vfs-cache-mode writes mount OneDrive: /home/sverre/onedrive &
 
 exec dunst & laptop-idle
 
-output * scale 1.1
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -69,7 +67,10 @@ output * bg ~/.local/share/wall.jpg fill
 #   }
 #
     input type:touchpad {
-	natural_scroll enabled
+        dwt enabled
+        tap enabled
+	    natural_scroll enabled
+        middle_emulation enabled
     }
 
     input type:keyboard {
