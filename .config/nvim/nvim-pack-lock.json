@@ -17,12 +17,18 @@
       "rev": "5629d5f",
       "src": "https://github.com/nvim-mini/mini.hipatterns"
     },
-    "mini.icons": [],
+    "mini.icons": {
+      "rev": "2847986",
+      "src": "https://github.com/echasnovski/mini.icons"
+    },
     "mini.pairs": {
       "rev": "b9aada8",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
-    "mini.pick": [],
+    "mini.pick": {
+      "rev": "96ee37d",
+      "src": "https://github.com/echasnovski/mini.pick"
+    },
     "nvim-treesitter": {
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",

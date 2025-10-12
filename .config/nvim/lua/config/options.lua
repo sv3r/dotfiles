@@ -1,11 +1,3 @@
-local is_wsl = false
-do
-    local uname = vim.loop.os_uname().release
-    if uname and uname:match('WSL') then
-        is_wsl = true
-    end
-end
-
 -- Lines
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -67,23 +59,8 @@ vim.opt.diffopt:append('linematch:60')
 vim.opt.iskeyword:append('-')
 vim.opt.timeoutlen = 500
 
-if is_wsl then
-    vim.g.clipboard = {
-        name = 'WslClipboard',
-        copy = {
-            ['+'] = 'clip.exe',
-            ['*'] = 'clip.exe',
-        },
-        paste = {
-            ['+'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))',
-            ['*'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))',
-        },
-        cache_enabled = 0,
-    }
-else
-    vim.opt.clipboard:append('unnamedplus')
-    vim.opt.ttimeoutlen = 0
-end
+vim.opt.clipboard:append('unnamedplus')
+vim.opt.ttimeoutlen = 0
 
 -- Performance
 vim.opt.redrawtime = 10000
