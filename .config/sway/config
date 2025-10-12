@@ -29,6 +29,10 @@ set $menu tofi-drun --drun-launch=true
 bindsym $mod+x exec powermenu
 
 for_window [class="^.*"] border pixel 1
+
+for_window [app_id="waybar-term"] floating enable
+for_window [app_id="waybar-term"] sticky enable
+
 hide_edge_borders smart
 
 ### Output configuration

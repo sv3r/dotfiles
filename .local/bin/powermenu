@@ -8,7 +8,7 @@ case "$CHOSEN" in
 	"Lock") lockscreen ;;
 	"Suspend") systemctl suspend-then-hibernate ;;
 	"Reboot") reboot ;;
-	"Shutdown") poweroff ;;
+	"Poweroff") poweroff ;;
 	"Log Out") swaymsg exit;;
 	*) exit 1 ;;
 esac

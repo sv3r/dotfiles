@@ -50,7 +50,7 @@
         "format-wifi": "󰤨",
         "format-disconnected": "󰤭",
 	    "tooltip-format": "Connected to {essid}",
-	    "on-click": "swaymsg exec 'kitty --app-id nmtui-term -e nmtui'"
+	    "on-click": "swaymsg exec 'kitty --app-id waybar-term -e nmtui'"
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -58,7 +58,8 @@
 	    "format-icons": {
 		    "default": ["", "", "󰕾"]
 	    },
-	    "tooltip-format": "{volume}% volume"
+	    "tooltip-format": "{volume}% volume",
+        "on-click": "swaymsg exec 'kitty --app-id waybar-term -e bluetui'"
     },
     "custom/power": {
         "format": "󰐥",
