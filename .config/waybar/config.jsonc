@@ -10,7 +10,7 @@
     ],
     "modules-right": [
         "tray",
-	"custom/pacman",
+        "custom/pacman",
         "pulseaudio",
         "network",
         "battery",
@@ -20,46 +20,46 @@
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-	"on-click": "activate"
+        "on-click": "activate"
     },
     "tray": {
-	"spacing": 10
+        "spacing": 10
     },
     "custom/pacman": {
-	"interval": 3600,
-	"return-type": "json",
-	"exec": "pacman-updates",
-	"exec-if": "exit 0",
-	"on-click": "$TERMINAL -e paru; pkill -SIGRTMIN+8 waybar",
-	"signal": 8
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "pacman-updates",
+        "exec-if": "exit 0",
+        "on-click": "$TERMINAL -e paru; pkill -SIGRTMIN+8 waybar",
+        "signal": 8
     },
     "clock": {
-	"tooltip-format": "{:%A, %d %B, %Y}",
-	"format": "{:%H:%M}"
+	    "tooltip-format": "{:%A, %d %B, %Y}",
+	    "format": "{:%H:%M}"
     },
     "battery": {
-	"states": {
-		"warning": 20
-	},
-	"format": "{icon}",
-	"format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+	    "states": {
+		    "warning": 20
+	    },
+	    "format": "{icon}",
+	    "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
         "format-charging": "󰂄",
         "format-warning": "󰂃",
-	"tooltip-format": "{capacity}% capacity"
+	    "tooltip-format": "{capacity}% capacity"
     },
     "network": {
         "format-wifi": "󰤨",
         "format-disconnected": "󰤭",
-	"tooltip-format": "Connected to {essid}",
-	"on-click": "swaymsg exec 'kitty --app-id nmtui-term -e nmtui'"
+	    "tooltip-format": "Connected to {essid}",
+	    "on-click": "swaymsg exec 'kitty --app-id nmtui-term -e nmtui'"
     },
     "pulseaudio": {
         "format": "{icon}",
         "format-muted": "󰖁",
-	"format-icons": {
-		"default": ["", "", "󰕾"]
-	},
-	"tooltip-format": "{volume}% volume"
+	    "format-icons": {
+		    "default": ["", "", "󰕾"]
+	    },
+	    "tooltip-format": "{volume}% volume"
     },
     "custom/power": {
         "format": "󰐥",
