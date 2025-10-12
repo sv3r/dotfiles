@@ -1,0 +1,21 @@
+prompt-text = "  "
+
+text-color = #bdbdbd
+prompt-color = #80a0ff
+selection-background = #80a0ff
+selection-background-padding = 10, 16
+selection-background-corner-radius = 10
+selection-color = #080808
+background-color = #080808dd
+
+width = 100%
+height = 100%
+border-width = 0
+outline-width = 0
+padding-left = 42%
+padding-top = 25%
+result-spacing = 25
+num-results = 6
+font = "JetBrainsMono Nerd Font"
+font-variations = "wght 600"
+font-size = 32
