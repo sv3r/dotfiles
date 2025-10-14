@@ -35,7 +35,8 @@
     },
     "clock": {
 	    "tooltip-format": "{:%A, %d %B, %Y}",
-	    "format": "{:%H:%M}"
+	    "format": "{:%H:%M:%S}",
+        "interval": 1
     },
     "battery": {
 	    "states": {
@@ -68,6 +69,7 @@
     },
     "custom/spotify": {
         "escape": true,
+        "exec-if": "$HOME/.local/bin/current-song | grep -q .",
         "exec": "$HOME/.local/bin/spotify-panel",
         "format": " [{}]",
         "max-length": 30,
