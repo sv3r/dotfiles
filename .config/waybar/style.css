@@ -61,7 +61,7 @@ button {
 
 #workspaces button {
     padding: 0 5px;
-    color: @selection;
+    color: @foreground;
     margin: 4px 0 4px 6px;
     transition: color 200ms ease-in-out;
 }
@@ -168,5 +168,3 @@ button {
 #scratchpad.empty {
 	background-color: transparent;
 }
-
-/* vim: ft=sass */
