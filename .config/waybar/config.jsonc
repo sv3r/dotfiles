@@ -71,7 +71,7 @@
         "escape": true,
         "exec-if": "$HOME/.local/bin/current-song | grep -q .",
         "exec": "$HOME/.local/bin/spotify-panel",
-        "format": " [{}]",
+        "format": "  {}",
         "max-length": 30,
         "on-click": "playerctl -p spotify play-pause",
         "on-scroll-down": "playerctl -p spotify previous",
