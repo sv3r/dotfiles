@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "tray",
+        "custom/spotify",
         "custom/pacman",
         "pulseaudio",
         "network",
@@ -29,7 +30,7 @@
         "return-type": "json",
         "exec": "pacman-updates",
         "exec-if": "exit 0",
-        "on-click": "$TERMINAL -e paru; pkill -SIGRTMIN+8 waybar",
+        "on-click": "kitty -e paru; pkill -SIGRTMIN+8 waybar",
         "signal": 8
     },
     "clock": {
@@ -64,5 +65,14 @@
     "custom/power": {
         "format": "󰐥",
         "on-click": "sleep 0.15 && powermenu"
+    },
+    "custom/spotify": {
+        "escape": true,
+        "exec": "$HOME/.local/bin/spotify-panel",
+        "format": " [{}]",
+        "max-length": 30,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "on-scroll-up": "playerctl -p spotify next"
     }
 }

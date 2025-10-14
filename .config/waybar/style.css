@@ -90,6 +90,7 @@ button {
 #wireplumber,
 #custom-pacman,
 #custom-power,
+#custom-spotify,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -146,6 +147,10 @@ button {
 #custom-power {
   color: @bright_red;
   margin-right: 5px;
+}
+
+#custom-spotify {
+  color: @yellow;
 }
 
 #keyboard-state > label {
