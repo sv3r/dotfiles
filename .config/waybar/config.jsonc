@@ -22,6 +22,10 @@
         "disable-scroll": true,
         "on-click": "activate"
     },
+    "sway/window": {
+        "format": "{app_id}",
+        "max-length": 30
+    },
     "tray": {
         "spacing": 10
     },
