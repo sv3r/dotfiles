@@ -13,6 +13,10 @@ exec dunst & laptop-idle
 output eDP-1 pos 0 1080
 output HDMI-A-1 pos 0 0 
 
+gaps outer 3
+gaps inner 8
+smart_gaps on
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
