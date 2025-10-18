@@ -216,7 +216,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec backlight down
     bindsym --locked XF86MonBrightnessUp exec backlight up
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    bindsym Print exec grim -g "$(slurp)" - | convert - -shave 1x1 PNG:- | tee ~/Pictures/$(date +%s).png | wl-copy
 
 #
 # Status Bar:
