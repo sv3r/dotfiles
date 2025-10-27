@@ -35,7 +35,7 @@ set $menu tofi-drun --drun-launch=true
 
 bindsym $mod+x exec powermenu
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 hide_edge_borders smart
 
