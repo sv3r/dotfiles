@@ -2,7 +2,7 @@
 
 sway-audio-idle-inhibit &
 swayidle -w \
-	timeout 150 'brightnessctl -e4 -s set 25%' resume 'brightnessctl -r' \
+	timeout 150 'if [ "$(cat /sys/class/power_supply/AC/online)" -eq 0 ]; then brightnessctl -e4 -s set 25%; fi' resume 'brightnessctl -r' \
 	timeout 300 'lockscreen' \
 	timeout 330 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 	timeout 1800 'systemctl suspend' \
