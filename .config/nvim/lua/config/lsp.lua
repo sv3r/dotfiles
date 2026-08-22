@@ -16,12 +16,10 @@ local servers = {
     'html'
 }
 
-for _, name in ipairs(servers) do
-    local loaded, config = pcall(require, '.lsp' .. name)
-    if loaded and type(config) == 'table' then
-        config.capabilities = capabilities
-        vim.lsp.config(name, config)
-    end
+for _, server in ipairs(servers) do
+    vim.lsp.config(server, {
+        capabilities = capabilities,
+    })
 end
 
 vim.lsp.enable(servers)
@@ -34,7 +32,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
             vim.keymap.set('i', '<C-Space>', function()
                 vim.lsp.completion.get()
-            end)
+            end, { buffer = ev.buf })
         end
     end,
 })

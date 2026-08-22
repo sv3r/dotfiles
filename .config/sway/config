@@ -8,7 +8,10 @@ font pango: JetBrainsMono Nerd Font 16
 
 exec rclone --vfs-cache-mode writes mount OneDrive: /home/sverre/onedrive &
 
-exec dunst & laptop-idle
+exec dunst
+
+# TODO: fix this shit
+# exec laptop-idle
 
 output eDP-1 pos 0 1080
 output HDMI-A-1 pos 0 0 
